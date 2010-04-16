@@ -1,4 +1,6 @@
 RailsJam::Application.routes.draw do |map|
+  resources :users
+
   resources :projects
 
   # The priority is based upon order of creation:
