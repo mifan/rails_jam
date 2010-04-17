@@ -1,0 +1,12 @@
+!!!
+%html{ :xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => :en,  :lang => :en }
+  %head
+    %meta{ "http-equiv" => "Content-Type", :content => "text/html; charset=utf-8" }
+    %title abc
+    %meta{ "name" => "keywords", :content => "key words" }
+    %meta{ "name" => "description", :content => "description words" }
+    = stylesheet_link_tag "core/libraries", "core/content", "core/template/template"
+    = javascript_include_tag :defaults
+    = csrf_meta_tag 
+  %body
+    = yield
