@@ -6,9 +6,11 @@ gem 'rails', '3.0.0.beta3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql'
+gem 'haml', '3.0.0.beta.3'
 gem 'acts-as-taggable-on'
 gem 'will_paginate','3.0.pre'
 gem 'acts_as_commentable','3.0.0'
+
 
 
 # Use unicorn as the web server
