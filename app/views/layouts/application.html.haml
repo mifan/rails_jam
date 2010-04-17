@@ -5,8 +5,8 @@
     %title abc
     %meta{ "name" => "keywords", :content => "key words" }
     %meta{ "name" => "description", :content => "description words" }
-    = stylesheet_link_tag "core/libraries", "core/content", "core/template/template"
-    = javascript_include_tag :defaults
+    = stylesheet_link_tag "oocss/core/libraries", "oocss/core/content", "oocss/core/template/template"
+    = javascript_include_tag "jquery.min", "rails"
     = csrf_meta_tag 
   %body
     = yield
