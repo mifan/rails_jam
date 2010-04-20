@@ -5,8 +5,12 @@
     %title abc
     %meta{ "name" => "keywords", :content => "key words" }
     %meta{ "name" => "description", :content => "description words" }
-    = stylesheet_link_tag "oocss/core/libraries", "oocss/core/content", "oocss/core/template/template"
+    = stylesheet_link_tag "oocss/core/libraries", "oocss/core/content", "oocss/core/template/template", "railsjam"
     = javascript_include_tag "jquery.min", "rails"
     = csrf_meta_tag 
   %body
-    = yield
+    .page
+      = render :partial => "tiles/head"
+      .body
+        = yield
+      = render :partial => "tiles/foot"
