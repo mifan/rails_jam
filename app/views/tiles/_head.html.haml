@@ -1,9 +1,9 @@
 .head
-  %a#logo{ :href => "http://railsjam.com/", :title => "Rails Jam Home" } Rails Jam
+  %a#logo{ :href => "/", :title => "Rails Jam Home" } Rails Jam
   %ul.navigation.signout
     %li.navi-left
-    %li= link_to 'New', '#'
-    %li= link_to "All", "#"
-    %li= link_to "Languages", "#"
-    %li= link_to "Login", "#"
+    %li= link_to 'New', new_project_path
+    %li= link_to "All Projects", projects_path
+    %li= link_to "Services", "#"
+    %li= link_to "Login", "/login"
     %li.navi-right
