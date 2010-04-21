@@ -1,0 +1,8 @@
+.item.clearfix
+  .when
+    %span.typo_date
+      = time_ago_in_words project.created_at
+  .link
+    = link_to project.name, project
+  .summary
+    = project.description

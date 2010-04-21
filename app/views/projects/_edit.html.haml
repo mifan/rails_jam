@@ -1,0 +1,9 @@
+- form_for(@project) do |f|
+  .input-space
+    = f.label :name, "Name:",:class => 'title'
+    = f.text_field :name ,{:class => 'space' ,:size => 50,:maxlength => "80", :style => "width:400px;"}
+  .input-space
+    = f.label :description, "Description:" ,:class => 'title'
+    = f.text_area :description, :class => 'space' , :rows => 18
+  %div
+    = f.submit 'Save', :class => 'submit'

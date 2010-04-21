@@ -1,1 +1,8 @@
-%p  ppppppppppppppp
+.rightCol
+  = render :partial => 'tiles/sidebox/follow_us'
+
+.main
+  %h2 Project List
+  #pastes
+    .summary There have  1 projects
+    = render :partial => 'project' , :collection => @projects
