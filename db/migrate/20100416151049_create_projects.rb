@@ -8,10 +8,9 @@ class CreateProjects < ActiveRecord::Migration
       t.string     :source_link
       t.string     :demo_link
 
-
       t.references :user
       
-      t.timestamp  :code_changed_at
+      t.timestamp  :pushed_at
       t.timestamps
     end
   end

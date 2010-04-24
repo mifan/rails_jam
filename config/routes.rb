@@ -1,7 +1,13 @@
 RailsJam::Application.routes.draw do |map|
-  resources :users
+  resources :users 
 
-  resources :projects
+  resources :projects do
+    collection do
+      post :git
+    end
+ 
+  end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
