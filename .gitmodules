@@ -1,3 +1,6 @@
 [submodule "public/stylesheets/oocss"]
 	path = public/stylesheets/oocss
 	url = git://github.com/stubbornella/oocss.git
+[submodule "public/javascripts/jquery.swfuploader"]
+	path = public/javascripts/jquery.swfuploader
+	url = git://github.com/aq1018/jquery.swfuploader
