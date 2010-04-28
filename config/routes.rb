@@ -5,6 +5,8 @@ RailsJam::Application.routes.draw do |map|
     collection do
       post :git
     end
+
+    resources :photos
  
   end
 
