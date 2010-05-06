@@ -1,4 +1,8 @@
 class PhotosController < ApplicationController
+  def index
+    render :layout => 'photo_upload' 
+  end  
+  
   def create
     @image = Image.new params[:image]
     if @image.save
