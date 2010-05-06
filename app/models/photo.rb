@@ -1,4 +1,5 @@
 class Photo < ActiveRecord::Base
+  belongs_to :project
   #has_attached_file :attachment, :styles => {:thumb => ["64x64#", :jpg]},
   #                          :url    => ":base_url/:resource/:styles_folder:basename:style_filename.:extension",
   #                         :path   => "public/u/:resource/:styles_folder:basename:style_filename.:extension" 

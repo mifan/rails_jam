@@ -1,11 +1,14 @@
 class PhotosController < ApplicationController
   def index
-    render :layout => 'photo_upload' 
+    @project = Project.find params[:project_id]
+    @photos = @project.photos
+    render :layout => 'photo_upload'
   end  
   
   def create
     @project = Project.find params[:project_id]
-    @photo = Photo.new params[:image]
+    #@photo = Photo.new params[:image]
+    @photo = @project.photos.build(params[:image])
     if @photo.save
       #respond_to do |format|
       #  format.json { render :json => generate_success.to_json }
@@ -46,6 +49,7 @@ class PhotosController < ApplicationController
   
   
   def generate_partial
-    render_to_string :template => 'photos/_photo.html.erb', :layout => false, :locals => {:photo => @photo ,:project => @project}
+    render_to_string :template => 'photos/_photo.html.erb', :layout => false, :locals => {:photo => @photo}
+    #render @photo
   end
 end
