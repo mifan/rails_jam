@@ -12,4 +12,10 @@ $(function(){
     }
   });
 
+
+  //sort able
+  $("#photos").sortable();
+  $("#photos").disableSelection();
+
+
 });

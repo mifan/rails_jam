@@ -2,9 +2,9 @@
   = render :partial => 'tiles/sidebox/follow_us'
 
 .main
-  .images
+  #photos.images
     = render @photos
-    .multifile
+  .multifile
 
 = javascript_include_tag 'jquery-ui','jquery.metadata', 'jquery.hoverIntent'
 = javascript_include_tag 'photo.upload'

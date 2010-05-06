@@ -1,4 +1,4 @@
-<span class="<%=dom_class(photo)%>" id="<%=dom_id(photo)%>">
+<div class="photo-thumb" id="<%=dom_id(photo)%>">
   <%= image_tag(photo.attachment.url(:thumb)) %>
   <%= link_to "delete", project_photo_path(photo.project,photo), :method => :delete %>
-</span>
+</div>

@@ -489,3 +489,17 @@ table.grid { width:100%; border:1px solid #CCC;border-collapse:collapse;border-s
 .cloud1 {
   background:none repeat scroll 0 0 #C8E0FF;
 }
+
+
+#photos {  margin: 0; padding: 0;}
+.photo-thumb{
+  margin: 3px 3px 3px 0; 
+  padding: 1px; 
+  float: left; 
+  width: 100px; 
+  height: 90px; 
+  text-align: center; 
+ }
+.multifile {
+  clear: both;
+}
