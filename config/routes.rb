@@ -7,7 +7,6 @@ RailsJam::Application.routes.draw do |map|
     end
 
     resources :photos
- 
   end
 
 

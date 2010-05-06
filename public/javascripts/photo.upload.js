@@ -1,9 +1,9 @@
 $(function(){
-
   $(".multifile").swfuploader({
-    upload_url      : "/photos",
+    upload_url      : window.location.href,
     set             :  "MultiFile",
     file_post_name  : "image[attachment]",
+    post_params     : {authenticity_token: $('meta[name=csrf-token]').attr('content')},
     file_types      : "*.jpg;*.gif;*.png",
     file_types_description: "Web Image Files", 
     upload_success_handler : function(file, serverData, response){

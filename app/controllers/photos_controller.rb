@@ -4,26 +4,29 @@ class PhotosController < ApplicationController
   end  
   
   def create
-    @image = Image.new params[:image]
-    if @image.save
-      respond_to do |format|
-        format.json { render :json => generate_success.to_json }
-      end
+    @project = Project.find params[:project_id]
+    @photo = Photo.new params[:image]
+    if @photo.save
+      #respond_to do |format|
+      #  format.json { render :json => generate_success.to_json }
+      #end
+      render :json => generate_success.to_json
     else
-      respond_to do |format|
-        format.json { render :json => generate_failure.to_json, :status => :unprocessable_entity }
-      end
+      #respond_to do |format|
+      #  format.json { render :json => generate_failure.to_json, :status => :unprocessable_entity }
+      #end
+      render :json => generate_failure.to_json, :status => :unprocessable_entity
     end
   end
   
   def new
-    @image = Image.new(params[:image])
-    @images = Image.all
+    @photo = Photo.new(params[:image])
+    @photos = Photo.all
   end
   
   def destroy
-    @images = Image.find(params[:id])
-    @images.destroy
+    @photos = Photo.find(params[:id])
+    @photos.destroy
     redirect_to :action => :new
   end
   
@@ -43,6 +46,6 @@ class PhotosController < ApplicationController
   
   
   def generate_partial
-    render_to_string :template => 'images/_image.html.erb', :layout => false, :locals => {:image => @image}
+    render_to_string :template => 'photos/_photo.html.erb', :layout => false, :locals => {:photo => @photo ,:project => @project}
   end
 end
