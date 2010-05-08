@@ -7,6 +7,8 @@ class CreatePhotos < ActiveRecord::Migration
       t.string    :attachment_content_type
       t.integer   :attachment_file_size
       t.datetime  :attachment_updated_at
+      #acts as list
+      t.integer   :position
 
       t.references :project
     end

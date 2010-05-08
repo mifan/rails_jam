@@ -8,14 +8,39 @@ $(function(){
     file_types_description: "Web Image Files", 
     upload_success_handler : function(file, serverData, response){
       var data = eval("("+ serverData + ")");
-      $(data.partial).hide().prependTo($(".images")).fadeIn();
+      $(data.partial).hide().appendTo($("#photos")).fadeIn();
     }
   });
 
 
   //sort able
-  $("#photos").sortable();
-  $("#photos").disableSelection();
+  $( "#photos" ).sortable({
 
+    update: function(event, ui) {
+
+      photos_arr = $.map($(this).sortable('toArray'), function(n){ return (n.substring(6)); });
+
+      $.post(
+        window.location.href + '/sort', 
+        {
+          authenticity_token: $('meta[name=csrf-token]').attr('content') ,
+          photos: photos_arr
+        },
+        function(data){
+          //alert(data.toString()) ;
+          //var photo_ids = eval("("+ data + ")");
+          $.each(data.changed_photos,function(index,value) {
+           $("#photo_" + value).effect("highlight", {}, 1000);
+           // alert(index + ': ' + value); 
+          });
+        },
+		'json'
+      );
+
+    }
+
+  });
+
+  $("#photos").disableSelection();
 
 });

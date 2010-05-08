@@ -32,6 +32,22 @@ class PhotosController < ApplicationController
     @photos.destroy
     redirect_to :action => :new
   end
+
+  def sort
+  project = Project.find params[:project_id]
+  photos = project.photos
+  changed_photos = []
+  photos.each do |photo|
+    photo_position = params['photos'].index(photo.id.to_s) + 1
+      if(photo.position != photo_position)
+        photo.position = photo_position
+	photo.save
+        changed_photos << photo.id
+      end
+      
+    end
+    render :json => { :changed_photos => changed_photos}.to_json
+  end
   
   private
   def generate_success

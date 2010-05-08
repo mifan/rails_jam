@@ -5,3 +5,15 @@
   %h2= @project.name
   .paste_show
     = @project.description
+
+  .callbackSlideShow.slideShow
+    %ul.slides
+      - @project.photos.each do |photo|
+        %li.slide
+          %img{ :border => 0, :src => "#{photo.attachment.url}"}
+
+    %ul.slide-navigation
+      - @project.photos.each_with_index do |photo,index|
+        %li
+          %a{ :href => "javascript:void(0);", :class => "page"} #{index+1}
+  = javascript_include_tag 'jquery-slideshow-minified'
