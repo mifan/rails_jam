@@ -10,7 +10,7 @@
     %ul.slides
       - @project.photos.each do |photo|
         %li.slide
-          %img{ :border => 0, :src => "#{photo.attachment.url}"}
+          %img{ :border => 0, :src => "#{photo.attachment.url(:slide)}"}
 
     %ul.slide-navigation
       - @project.photos.each_with_index do |photo,index|
