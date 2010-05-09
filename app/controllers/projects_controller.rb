@@ -24,6 +24,12 @@ class ProjectsController < ApplicationController
     @page_title = "Edit project" 
   end
 
+  def update
+    @project = Project.find(params[:id])
+    @project.update_attributes!(params[:project])
+    redirect_to(@project)
+  end
+
 
   def git
     require 'open-uri'

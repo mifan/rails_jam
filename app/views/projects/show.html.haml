@@ -3,14 +3,14 @@
 
 .main
   %h2= @project.name
-  .paste_show
+  .paste_show.metabox
     = @project.description
 
   .callbackSlideShow.slideShow
     %ul.slides
       - @project.photos.each do |photo|
         %li.slide
-          %img{ :border => 0, :src => "#{photo.attachment.url(:slide)}"}
+          %img{ :width => 600, :height => 450, :border => 0, :src => "#{photo.attachment.url(:slide)}"}
 
     %ul.slide-navigation
       - @project.photos.each_with_index do |photo,index|

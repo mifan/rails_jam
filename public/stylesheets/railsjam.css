@@ -595,6 +595,12 @@ table.grid { width:100%; border:1px solid #CCC;border-collapse:collapse;border-s
   overflow:hidden;
 }
 
-.desc-content {
-
+ 
+.metabox {
+  background:none repeat scroll 0 0 #FAFAFA;
+  border2:1px solid #B3B3B3;
+  color:#333333;
+margin-bottom:10px;
+  
+  padding:10px;
 }
