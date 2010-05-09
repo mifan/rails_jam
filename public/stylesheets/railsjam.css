@@ -496,8 +496,8 @@ table.grid { width:100%; border:1px solid #CCC;border-collapse:collapse;border-s
   margin: 3px 3px 3px 0; 
   padding: 1px; 
   float: left; 
-  width: 100px; 
-  height: 90px; 
+  width: 180px; 
+  height: 180px; 
   text-align: center; 
  }
 .multifile {
@@ -582,3 +582,19 @@ table.grid { width:100%; border:1px solid #CCC;border-collapse:collapse;border-s
 			background-color: #ffffff;
 			border: 1px solid #999;
 		}
+
+
+
+/*********************** styles for show ****************************************/
+.leadimg {
+  border:10px solid #E1E1E1;
+  float:left;
+  width:160px;
+  height:160px;
+  margin:15px 20px 15px 0;
+  overflow:hidden;
+}
+
+.desc-content {
+
+}

@@ -19,6 +19,12 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
   end
 
+  def edit
+    @project = Project.find(params[:id])
+    @page_title = "Edit project" 
+  end
+
+
   def git
     require 'open-uri'
     git_project_link = params[:git_project_link]

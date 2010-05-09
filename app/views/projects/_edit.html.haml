@@ -1,10 +1,4 @@
-#git-select.input-space
-  %label{ :for => 'git_project_link', :class => 'title' } Github Project Link:
-  %input#git_project_link{ :type => "text", :class => 'space' }
-  %p.notice please leave it blank if the project isn't hosted in github.(http://github.com/mocra/fat_free_crm)
-  %input#git_project_button{ :class => 'submit', :type => 'button', :value => 'Next' } 
-
-#normal-input{:style => 'display:none;'}
+#normal-input
   - form_for(@project) do |f|
     .input-space
       = f.label :name, "Name:",:class => 'title'
