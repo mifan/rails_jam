@@ -49,5 +49,23 @@ class ProjectsController < ApplicationController
     render :text => json_response
   end
 
-
+  def commits
+    require 'open-uri'
+    project = Project.find(params[:id])
+    git_project_link = project.source_link
+    if git_project_link.start_with?("http://github.com/")
+      user_project = git_project_link.gsub(/http:\/\/github.com\//,'')
+      if  user_project =~ /\w+\/\w+/
+        user_project_repos_path = "http://github.com/api/v2/json/commits/list/#{user_project}/master" 
+	begin
+          json_response = open(user_project_repos_path).read
+        rescue
+	  json_response = '{"commits":"error"}'
+	end
+      end
+    end
+    json_response = '{"commits":"error"}' unless defined?(json_response)
+    render :text => json_response
+    
+  end
 end

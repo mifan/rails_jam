@@ -16,4 +16,19 @@
       - @project.photos.each_with_index do |photo,index|
         %li
           %a{ :href => "javascript:void(0);", :class => "page"} #{index+1}
+  .resources
+    %h2 Resources
+    .resource 
+      %h3 Home Page
+      =link_to @project.home_page, @project.home_page
+    .resource 
+      %h3 Source Link
+      =link_to @project.source_link, @project.source_link
+    .resource 
+      %h3 Demo Link
+      =link_to @project.demo_link, @project.demo_link
+  .commits
+
   = javascript_include_tag 'jquery-slideshow-minified'
+  = javascript_include_tag 'project.show.js'
+
