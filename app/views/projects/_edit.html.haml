@@ -15,5 +15,9 @@
     .input-space
       = f.label :demo_link, "Demo Link", :class => 'title'
       = f.text_field :demo_link ,{:class => 'space' }      
+    .input-space
+      = f.label :tags, "Tags", :class => 'title'
+      = text_field_tag("project[tag_list]", @project.tag_list,:class => "space")
+      %span (separated with comma)
     %div
       = f.submit 'Next', :class => 'submit'

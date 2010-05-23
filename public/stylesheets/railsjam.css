@@ -603,8 +603,18 @@ table.grid { width:100%; border:1px solid #CCC;border-collapse:collapse;border-s
   margin-bottom:10px;
   padding:10px;
 }
+/*******************************************************/
+.resources {
+     margin: 0.7em;
+}
+.resource a{
+   margin: 0.7em;
+}
 
 /**********************commits**************************/
+.commits{
+   margin: 0.7em;
+}
 .commit {
   border-top: 1px solid #BEDCE7;
   border-left: 1px solid #BEDCE7;

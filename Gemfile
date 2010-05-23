@@ -7,7 +7,7 @@ gem 'rails', '3.0.0.beta3'
 
 gem 'mysql'
 gem 'haml', '3.0.4'
-gem 'acts-as-taggable-on'
+gem 'acts-as-taggable-on', :source => 'http://gemcutter.org'
 gem 'will_paginate','3.0.pre'
 gem 'acts_as_commentable','3.0.0'
 gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git', :branch => 'rails3'

@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.order('id DESC')
+    @tags = Project.tag_counts_on(:tags)
   end
 
   def new

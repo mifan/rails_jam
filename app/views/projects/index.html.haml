@@ -1,5 +1,10 @@
 .rightCol
   = render :partial => 'tiles/sidebox/follow_us'
+  .side-box
+    %h3 Tag cloud
+    .tags
+    - tag_cloud(@tags, %w(cloud1 cloud2 cloud3 cloud4)) do |tag, css_class|
+      = link_to tag.name, "/tags/#{tag.name}/projects", :class => css_class
 
 .main
   %h2 Project List

@@ -1,0 +1,6 @@
+- unless @project.tags.blank?
+  .side-box
+    %h3 Tags
+    .tags
+      - for tag in @project.tags
+        = link_to tag.name, "/tags/#{tag.name}/projects", :class => 'cloud4'
