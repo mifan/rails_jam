@@ -28,6 +28,9 @@
       %h3 Demo Link
       =link_to @project.demo_link, @project.demo_link
   .commits
+    %h3 Recent Commits
+    = render :partial => 'commit' , :collection => @commits
+  .comments
 
   = javascript_include_tag 'jquery-slideshow-minified'
   = javascript_include_tag 'project.show.js'

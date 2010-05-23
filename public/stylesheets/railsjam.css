@@ -600,7 +600,36 @@ table.grid { width:100%; border:1px solid #CCC;border-collapse:collapse;border-s
   background:none repeat scroll 0 0 #FAFAFA;
   border2:1px solid #B3B3B3;
   color:#333333;
-margin-bottom:10px;
-  
+  margin-bottom:10px;
   padding:10px;
+}
+
+/**********************commits**************************/
+.commit {
+  border-top: 1px solid #BEDCE7;
+  border-left: 1px solid #BEDCE7;
+  border-right: 1px solid #BEDCE7;
+  overflow:hidden;
+}
+
+.commit .message {
+  color:#000000;
+}
+.commit .message pre {
+  text-align: left;
+}
+
+.commit .message a {
+  color:#000000;
+}
+
+.actor{
+  margin: 0.7em;
+}
+.avstar  {
+  background-color:white;
+  border:1px solid #D0D0D0;
+  float:left;
+  margin-right:0.7em;
+  padding:2px;
 }

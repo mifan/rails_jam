@@ -1,0 +1,12 @@
+.commit
+  .message
+    %pre
+      = link_to commit['message'], commit['url']
+  .actor
+    .avstar
+      %img{ :width => 30, :height => 30, :alt => '', :src => author_avstar(commit['author']['email']) }
+    .author
+      = link_to commit['author']['name'], "http://github.com/#{commit['author']['name']}"
+    .date
+      %abbr{ :title => Time.xmlschema(commit['committed_date']).to_s }
+        = time_ago_in_words Time.xmlschema(commit['committed_date'])

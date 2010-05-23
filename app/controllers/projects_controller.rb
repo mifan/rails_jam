@@ -17,6 +17,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @commits = new_commits(@project)
   end
 
   def edit
@@ -49,23 +50,40 @@ class ProjectsController < ApplicationController
     render :text => json_response
   end
 
-  def commits
-    require 'open-uri'
-    project = Project.find(params[:id])
+ 
+
+  private 
+  def git_user_project(project)
     git_project_link = project.source_link
     if git_project_link.start_with?("http://github.com/")
       user_project = git_project_link.gsub(/http:\/\/github.com\//,'')
-      if  user_project =~ /\w+\/\w+/
-        user_project_repos_path = "http://github.com/api/v2/json/commits/list/#{user_project}/master" 
-	begin
-          json_response = open(user_project_repos_path).read
-        rescue
-	  json_response = '{"commits":"error"}'
-	end
-      end
+      return user_project  if  user_project =~ /\w+\/\w+/
     end
-    json_response = '{"commits":"error"}' unless defined?(json_response)
-    render :text => json_response
-    
+    nil
   end
+
+  #[hash...]
+  def new_commits(project)
+    require 'open-uri'
+    require 'json'
+    require 'digest/md5'
+    new_commits = []
+    temp_user_project = git_user_project(project)
+    return new_commits if temp_user_project == nil
+
+    user_project_commits_path = "http://github.com/api/v2/json/commits/list/#{temp_user_project}/master"
+    begin
+      json_response = open(user_project_commits_path).read
+      result = JSON.parse(json_response)
+      commits = result['commits']
+      commits.each_with_index do |commit,index|
+        new_commits << commit
+        break if index > 8
+      end
+    rescue
+    end
+    new_commits
+  end
+ 
+
 end
