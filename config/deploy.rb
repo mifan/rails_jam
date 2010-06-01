@@ -22,5 +22,6 @@ namespace :deploy do
   task :stop do ; end
   task :restart, :roles => :app do   
     run "cp -f #{shared_path}/config/database.yml #{release_path}/config/"
+    run "ln -s #{shared_path}/.bundle #{release_path}/.bundle"
   end
 end
