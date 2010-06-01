@@ -7,7 +7,7 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
-    @page_title = "New paste " 
+    @page_title = "New project " 
   end
 
   def create
